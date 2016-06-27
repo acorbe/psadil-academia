@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="{{ DEFAULT_LANG }}" itemscope itemtype="http://schema.org/Person">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>{% block title %} {{ SITENAME }} | {{ SIDEBAR_DIGEST }} {% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ AUTHOR_DESCRIPTION }}">
+  <meta name="author" content="{{ AUTHOR }}">
+
+  <link rel="shortcut icon" href="{{ FAVICON }}">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="{{ SITENAME }}">
+  <meta itemprop="image" content="{{ AVATAR}}">
+  <meta itemprop="description" content="{{ AUTHOR_DESCRIPTION }}">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
+
+
+  <!-- Feed Meta Data -->
+  {% if FEED_ALL_ATOM %}
+    <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+  {% endif %}
+  {% if FEED_ALL_RSS %}
+    <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+  {% endif %}
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="{{ TWITTER_USERNAME }}">
+  <meta name="twitter:image" content="">
+  {% endblock %}
+</head>
+
+<body>
+  <!-- Site navigation list -->
+  {% block navigation %}
+    <nav>
+      <h1 id = "author"> <a href="{{ SITEURL }}" id="home"> {{ AUTHOR }} </a> </h1>
+      <ul id = "nav_list" class="list-bare">
+        {% if articles %}
+          <li>
+            <a class="nav_link" href="{{ SITEURL }}/{{ POSTS_URL }}"> Blog </a>
+          </li>
+        {% endif %}
+        {% if PAGES %}
+          {% for p in pages %}
+            <li>
+              <a class="nav_link" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </nav>
+  {% endblock %}
+
+  {% block sidebar %}
+  {% endblock %}
+  <!-- Content -->
+  <div id = "container">
+      {% block content %}
+        <div class = "content"></div>
+      {% endblock %}
+
+  <!-- Footer -->
+    <footer>
+      <p>
+        Powered by <a href="http://getpelican.com/">Pelican</a>,
+        which takes great advantage of <a href="http://python.org">Python</a>.<br>
+        Theme <a href="https://github.com/wjhopper/academia-red">academia</a> by <a href="http://hopperlab.com/">Will Hopper</a>.
+        Styled with the help of <a href="http://getskeleton.com/">Skeleton</a>
+      </p>
+    </footer>
+  </div>
+
+  {% if GOOGLE_ANALYTICS %}
+  <!-- Analytics -->
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ GOOGLE_ANALYTICS }}']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+  {% endif %}
+
+</body>
+</html>

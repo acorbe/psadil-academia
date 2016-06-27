@@ -1,0 +1,16 @@
+<aside>
+  <h4> {{ SITESUBTITLE }} </h4>
+  <img id="avatar" src="{{ SITEURL }}/img/{{ AVATAR }}"></a>
+  {% if LINKS %}
+  <div id = "links">
+    {% for name, link in LINKS %}
+      <div class="button button-primary">
+        <a href="{{ link }}">
+          <img src="{{ SITEURL }}/theme/images/icons/{{ name|lower }}.png">
+          {{ name }}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</aside>
