@@ -20,7 +20,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-THEME = 'academia'
+THEME = 'theme/academia'
 AVATAR = 'blank_avatar.png'
 # Links widget
 LINKS = (('cv', '/misc/Fake_CV.pdf'),
