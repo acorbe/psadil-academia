@@ -55,3 +55,15 @@ The files in the `content/posts` directory are used to create the blog posts. Tw
 To see your site and test out changes, start up the development web server by running `make devserver` in the directory where your Pelican site is set up, and navigate your web browser to http://localhost:8000
 
 For information on publishing your site, read the [publishing docs](http://docs.getpelican.com/en/3.6.3/publish.html)
+
+To sync local content
+
+```
+make rsync_upload
+```
+
+If you need to checkout the pages that were uploaded, use
+
+```
+ssh user@webadmin.oit.umass.edu
+```
