@@ -1,4 +1,4 @@
-PY?=python3
+PY?=python
 PELICAN?=pelican
 PELICANOPTS=
 
@@ -12,10 +12,10 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=localhost
+SSH_HOST=webadmin.oit.umass.edu
 SSH_PORT=22
-SSH_USER=root
-SSH_TARGET_DIR=/var/www
+SSH_USER=psadil
+SSH_TARGET_DIR=~/public_html
 
 S3_BUCKET=my_s3_bucket
 

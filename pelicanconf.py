@@ -2,13 +2,16 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'First M. Last'
-SITENAME = 'First M. Last'
-SITESUBTITLE = 'Things and Stuff, Stuff and Things'
-SITEURL = 'localhost:8000'
+AUTHOR = 'Patrick Sadil'
+SITENAME = 'Patrick Sadil'
+SITESUBTITLE = 'Graduate Student, Year 2'
+SITEURL = 'http://people.umass.edu/psadil'
 
 PATH = 'content'
 STATIC_PATHS = ['img','presentations','publications', 'misc']
+
+PLUGIN_PATHS = ["plugins", "/media/psadil/Data/git/pelican-plugins"]
+PLUGINS = ["rmd_reader"]
 
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = 'fs'
@@ -21,11 +24,11 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 THEME = 'theme/academia'
-AVATAR = 'blank_avatar.png'
+AVATAR = 'Patrick_Sadil.jpg'
 # Links widget
-LINKS = (('cv', '/misc/Fake_CV.pdf'),
-         ('email', 'mailto:username@domain_name'),
-         ('github', 'https://github.com/your_real_username'))
+LINKS = (('CV', 'misc/PatrickSadil_CV.pdf'),
+         ('email', 'mailto:psadil@umass.edu'),
+         ('github', 'https://github.com/psadil'))
 
 DEFAULT_PAGINATION = 5
 SUMMARY_MAX_LENGTH = 90
